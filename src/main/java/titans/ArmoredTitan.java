@@ -9,8 +9,8 @@ public class ArmoredTitan {
     private ArmOrgan leftArmOrgan;
     private ChestOrgan chestOrgan;
     private StomachOrgan stomachOrgan;
-    private LegOrgan rightLegArmor;
-    private LegOrgan leftLegArmor;
+    private LegOrgan rightLegOrgan;
+    private LegOrgan leftLegOrgan;
     private FootOrgan rightFootOrgan;
     private FootOrgan leftFootOrgan;
 
@@ -21,8 +21,8 @@ public class ArmoredTitan {
 			ArmOrgan leftArmOrgan,
 			ChestOrgan chestOrgan,
 			StomachOrgan stomachOrgan,
-			LegOrgan rightLegArmor,
-			LegOrgan leftLegArmor,
+			LegOrgan rightLegOrgan,
+			LegOrgan leftLegOrgan,
 			FootOrgan rightFootOrgan,
 			FootOrgan leftFootOrgan) {
         this.faceOrgan = faceOrgan;
@@ -31,8 +31,8 @@ public class ArmoredTitan {
         this.leftArmOrgan = leftArmOrgan;
         this.chestOrgan = chestOrgan;
         this.stomachOrgan = stomachOrgan;
-        this.rightLegArmor = rightLegArmor;
-        this.leftLegArmor = leftLegArmor;
+        this.rightLegOrgan = rightLegOrgan;
+        this.leftLegOrgan = leftLegOrgan;
         this.rightFootOrgan = rightFootOrgan;
         this.leftFootOrgan = leftFootOrgan;
     }
@@ -61,12 +61,12 @@ public class ArmoredTitan {
         return stomachOrgan;
     }
 
-    public LegOrgan getRightLegArmor() {
-        return rightLegArmor;
+    public LegOrgan getRightLegOrgan() {
+        return rightLegOrgan;
     }
 
-    public LegOrgan getLeftLegArmor() {
-        return leftLegArmor;
+    public LegOrgan getLeftLegOrgan() {
+        return leftLegOrgan;
     }
 
     public FootOrgan getRightFootOrgan() {
@@ -77,7 +77,7 @@ public class ArmoredTitan {
         return leftFootOrgan;
     }
 
-    public void setFaceOrgan(FaceOrgan faceOrgan) {
+    private void setFaceOrgan(FaceOrgan faceOrgan) {
         this.faceOrgan = faceOrgan;
     }
 
@@ -102,11 +102,11 @@ public class ArmoredTitan {
     }
 
     private void setRightLegArmor(LegOrgan rightLegArmor) {
-        this.rightLegArmor = rightLegArmor;
+        this.rightLegOrgan = rightLegArmor;
     }
 
     private void setLeftLegArmor(LegOrgan leftLegArmor) {
-        this.leftLegArmor = leftLegArmor;
+        this.leftLegOrgan = leftLegArmor;
     }
 
     private void setRightFootOrgan(FootOrgan rightFootOrgan) {
@@ -118,6 +118,16 @@ public class ArmoredTitan {
     }
 
     public static ArmoredTitan create() {
-        return null;
+        return new ArmoredTitan(
+                FaceOrgan.create(),
+                NeckOrgan.create(),
+                ArmOrgan.create(),
+                ArmOrgan.create(),
+                ChestOrgan.create(),
+                StomachOrgan.create(),
+                LegOrgan.create(),
+                LegOrgan.create(),
+                FootOrgan.create(),
+                FootOrgan.create());
     }
 }
