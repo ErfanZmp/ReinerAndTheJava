@@ -1,6 +1,7 @@
 package organ;
 
 import armor.LegArmor;
+import config.ConfigLoader;
 
 public class LegOrgan extends Organ {
     private LegOrgan(double hp) {
@@ -8,6 +9,6 @@ public class LegOrgan extends Organ {
     }
 
     public static LegOrgan create() {
-        return new LegOrgan(-1);
+        return new LegOrgan(ConfigLoader.getHp("leg"));
     }
 }

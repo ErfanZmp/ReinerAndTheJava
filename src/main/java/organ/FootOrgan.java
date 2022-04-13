@@ -1,6 +1,7 @@
 package organ;
 
 import armor.FootArmor;
+import config.ConfigLoader;
 
 public class FootOrgan extends Organ{
     private FootOrgan(double hp) {
@@ -8,6 +9,6 @@ public class FootOrgan extends Organ{
     }
 
     public static FootOrgan create() {
-        return new FootOrgan(-1);
+        return new FootOrgan(ConfigLoader.getHp("foot"));
     }
 }

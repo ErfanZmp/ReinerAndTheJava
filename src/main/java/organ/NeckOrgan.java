@@ -1,6 +1,7 @@
 package organ;
 
 import armor.NeckArmor;
+import config.ConfigLoader;
 
 public class NeckOrgan extends Organ {
     private NeckOrgan(double hp) {
@@ -8,6 +9,6 @@ public class NeckOrgan extends Organ {
     }
 
     public static NeckOrgan create() {
-        return new NeckOrgan(-1);
+        return new NeckOrgan(ConfigLoader.getHp("neck"));
     }
 }

@@ -1,6 +1,7 @@
 package organ;
 
 import armor.StomachArmor;
+import config.ConfigLoader;
 
 public class StomachOrgan extends Organ {
     private StomachOrgan(double hp) {
@@ -8,6 +9,6 @@ public class StomachOrgan extends Organ {
     }
 
     public static StomachOrgan create() {
-        return new StomachOrgan(-1);
+        return new StomachOrgan(ConfigLoader.getHp("stomach"));
     }
 }

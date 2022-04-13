@@ -1,6 +1,7 @@
 package organ;
 
 import armor.FaceArmor;
+import config.ConfigLoader;
 
 public class FaceOrgan extends Organ {
     private FaceOrgan(double hp) {
@@ -8,6 +9,6 @@ public class FaceOrgan extends Organ {
     }
 
     public static FaceOrgan create() {
-        return new FaceOrgan(-1);
+        return new FaceOrgan(ConfigLoader.getHp("face"));
     }
 }

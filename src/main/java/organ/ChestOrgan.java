@@ -1,6 +1,7 @@
 package organ;
 
 import armor.ChestArmor;
+import config.ConfigLoader;
 
 public class ChestOrgan extends Organ {
     private ChestOrgan(double hp) {
@@ -8,6 +9,6 @@ public class ChestOrgan extends Organ {
     }
 
     public static ChestOrgan create() {
-        return new ChestOrgan(-1);
+        return new ChestOrgan(ConfigLoader.getHp("chest"));
     }
 }
