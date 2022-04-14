@@ -37,6 +37,21 @@ public class TitanTests {
     }
 
     @Test
+    public void getKTest(){
+        ArmoredTitan titan = ArmoredTitan.create();
+        assertEquals(1.8,titan.getFaceOrgan().getArmor().getK());
+        assertEquals(2.1,titan.getNeckOrgan().getArmor().getK());
+        assertEquals(3.4,titan.getLeftArmOrgan().getArmor().getK());
+        assertEquals(3.4,titan.getRightArmOrgan().getArmor().getK());
+        assertEquals(12.2,titan.getChestOrgan().getArmor().getK());
+        assertEquals(11.2,titan.getStomachOrgan().getArmor().getK());
+        assertEquals(12,titan.getLeftLegOrgan().getArmor().getK());
+        assertEquals(12,titan.getRightLegOrgan().getArmor().getK());
+        assertEquals(8.2,titan.getLeftFootOrgan().getArmor().getK());
+        assertEquals(8.2,titan.getRightFootOrgan().getArmor().getK());
+    }
+
+    @Test
     public void DamageTest()
     {
         ArmoredTitan titan = ArmoredTitan.create();
