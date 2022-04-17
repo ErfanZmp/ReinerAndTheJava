@@ -12,7 +12,7 @@ public abstract class Armor implements Damageable {
     }
 
     public double getDurability() {
-        return durability <= 0 ? 0 : durability;
+        return durability;
     }
 
     public double getK() {
@@ -22,7 +22,8 @@ public abstract class Armor implements Damageable {
     @Override
     public boolean takeDamage(double force) {
         durability -= force/k;
+        if (durability < 0) durability = 0;
         durability = Math.round(durability*100.0) / 100.0;
-        return durability <= 0;
+        return durability == 0;
     }
 }

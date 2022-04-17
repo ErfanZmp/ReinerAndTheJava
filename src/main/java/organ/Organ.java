@@ -13,7 +13,7 @@ public abstract class Organ implements Damageable {
     }
 
     public double getHp() {
-        return hp <= 0 ? 0 : hp;
+        return hp;
     }
 
     public Armor getArmor() {
@@ -22,13 +22,11 @@ public abstract class Organ implements Damageable {
 
     @Override
     public boolean takeDamage(double force) {
-        if(armor.getDurability() > 0) {
-            hp -= (force*calcResist(armor.getDurability()))/100.0;
-            armor.takeDamage(force);
-        }
-        else hp -= force;
+        hp -= (force*calcResist(armor.getDurability()))/100.0;
+        armor.takeDamage(force);
+        if (hp < 0) hp = 0;
         hp = Math.round(hp*100.0) / 100.0;
-        return hp <= 0;
+        return hp == 0;
     }
 
     private double calcResist(double x) {
